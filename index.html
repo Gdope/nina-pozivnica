@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nina puni 18! 🎉 Pozivnica za rođendan</title>
+  <meta name="description" content="Pozvan/a si na proslavu Nininog 18. rođendana! Subota, 12. decembar 2026. u 20 časova. Potvrdi dolazak.">
+  <meta name="theme-color" content="#f6e3e1">
+
+  <!-- Link preview (WhatsApp / Viber / Instagram / Facebook).
+       og:url and og:image MUST be absolute URLs; update them if your GitHub Pages address differs. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:site_name" content="Nina 18">
+  <meta property="og:title" content="Nina puni 18! 🎉">
+  <meta property="og:description" content="Pozvan/a si na proslavu mog punoletstva. Otvori pozivnicu i potvrdi dolazak!">
+  <meta property="og:url" content="https://gdope.github.io/nina-pozivnica/">
+  <meta property="og:image" content="https://gdope.github.io/nina-pozivnica/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pozivnica za Ninin 18. rođendan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nina puni 18! 🎉">
+  <meta name="twitter:description" content="Pozvan/a si na proslavu mog punoletstva. Otvori pozivnicu i potvrdi dolazak!">
+  <meta name="twitter:image" content="https://gdope.github.io/nina-pozivnica/assets/og-image.jpg">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Lato:wght@400;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <main class="card">
+    <!-- ===== Hero ===== -->
+    <header class="hero reveal">
+      <p class="eyebrow">Pozivnica za rođendan</p>
+      <h1 class="name">Nina</h1>
+      <div class="age" aria-label="18 godina">
+        <span class="age-num">18</span>
+      </div>
+      <p class="lead">
+        Stiglo je i to — punoletstvo! Ovo veče želim da provedem
+        sa ljudima koje volim, a ti si definitivno jedan od njih.
+      </p>
+    </header>
+
+    <div class="divider" aria-hidden="true"><span>✦</span></div>
+
+    <!-- ===== Countdown ===== -->
+    <section class="countdown reveal" aria-labelledby="cd-title">
+      <h2 id="cd-title" class="section-title">Do proslave je ostalo još</h2>
+      <div class="cd-grid" id="countdown">
+        <div class="cd-box"><span class="cd-num" data-unit="days">–</span><span class="cd-label" data-label="days">dana</span></div>
+        <div class="cd-box"><span class="cd-num" data-unit="hours">–</span><span class="cd-label" data-label="hours">sati</span></div>
+        <div class="cd-box"><span class="cd-num" data-unit="minutes">–</span><span class="cd-label" data-label="minutes">minuta</span></div>
+        <div class="cd-box"><span class="cd-num" data-unit="seconds">–</span><span class="cd-label" data-label="seconds">sekundi</span></div>
+      </div>
+      <p class="cd-message" id="cd-message" hidden></p>
+    </section>
+
+    <!-- ===== Details (edit the visible text here) ===== -->
+    <section class="details reveal" aria-labelledby="details-title">
+      <h2 id="details-title" class="section-title">Gde i kada</h2>
+
+      <ul class="detail-list">
+        <li class="detail">
+          <span class="detail-icon" aria-hidden="true">📅</span>
+          <div>
+            <p class="detail-label">Kada</p>
+            <p class="detail-value">Subota, 12. decembar 2026.</p>
+          </div>
+        </li>
+        <li class="detail">
+          <span class="detail-icon" aria-hidden="true">🕗</span>
+          <div>
+            <p class="detail-label">Vreme</p>
+            <p class="detail-value">Okupljanje od 20 časova</p>
+          </div>
+        </li>
+        <li class="detail">
+          <span class="detail-icon" aria-hidden="true">📍</span>
+          <div>
+            <p class="detail-label">Mesto</p>
+            <p class="detail-value">Restoran Hotel Vila Konak</p>
+          </div>
+        </li>
+        <li class="detail">
+          <span class="detail-icon" aria-hidden="true">✨</span>
+          <div>
+            <p class="detail-label">Dres kod</p>
+            <p class="detail-value">Elegantno, ali da može da se igra celu noć</p>
+          </div>
+        </li>
+      </ul>
+
+      <a class="btn btn-outline btn-block" id="map-link" href="#" target="_blank" rel="noopener">Otvori mapu</a>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span>✦</span></div>
+
+    <!-- ===== RSVP ===== -->
+    <section class="rsvp reveal" aria-labelledby="rsvp-title">
+      <h2 id="rsvp-title" class="section-title">Potvrdi dolazak</h2>
+      <p>
+        Javi mi najkasnije do <strong>30. novembra</strong> da li dolaziš,
+        da znam za koliko ljudi da spremim mesto (i tortu 🎂).
+      </p>
+      <div class="btn-stack" id="rsvp-buttons">
+        <button class="btn btn-primary" id="rsvp-yes" type="button" aria-expanded="false" aria-controls="rsvp-form">Dolazim! 🎉</button>
+        <a class="btn btn-outline" id="rsvp-no" href="#" target="_blank" rel="noopener">Nažalost, ne mogu</a>
+      </div>
+
+      <form class="rsvp-form" id="rsvp-form" hidden>
+        <label class="rsvp-label" for="rsvp-name">Kako se zoveš?</label>
+        <input class="rsvp-input" id="rsvp-name" name="name" type="text" autocomplete="name"
+               placeholder="Ime i prezime" required maxlength="80">
+        <button class="btn btn-primary btn-block" id="rsvp-submit" type="submit">Pošalji</button>
+        <p class="rsvp-error" id="rsvp-error" role="alert" hidden>
+          Nešto nije u redu sa vezom. Pokušaj ponovo ili mi se javi porukom.
+        </p>
+      </form>
+
+      <p class="rsvp-thanks" id="rsvp-thanks" role="status" hidden></p>
+      <p class="small">
+        Radije koristiš <a id="viber-link" href="#">Viber</a> ili <a id="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp</a>? Piši mi tamo.
+      </p>
+    </section>
+
+    <section class="gift reveal">
+      <p>
+        Tvoje prisustvo mi je najlepši poklon.
+        Ostalo je samo šlag na torti. 🤍
+      </p>
+    </section>
+
+    <footer class="footer reveal">
+      <p>Jedva čekam da se vidimo!</p>
+      <p class="signature">Nina</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
