@@ -13,11 +13,12 @@ const CONFIG = {
   mapQuery: "Hotel Vila Konak",
 
   // Google Form that collects "Dolazim" RSVPs. Entry IDs come from the form's ⋮ menu → "Get pre-filled link".
-  // attendingValue must match the multiple-choice option text exactly (including the double space).
+  // attendingValue must match the multiple-choice option text exactly, emoji included.
+  // The form must not require sign-in, or Google rejects every submission.
   formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfWLk4R4nvYp5ryEY9n-BIbou55LYQ9gTzPKRMjHzdEvGI2Zw/formResponse",
   nameField: "entry.559352220",
   attendingField: "entry.877086558",
-  attendingValue: "Yes,  I'll be there",
+  attendingValue: "Dolazim naravno! 😁",
 
   // Prefilled WhatsApp/Viber messages
   rsvpYes: "Ćao Nina! 🎉 Dolazim na tvoj 18. rođendan, jedva čekam!",
