@@ -12,12 +12,15 @@ const CONFIG = {
   // What gets searched in Google Maps
   mapQuery: "Hotel Vila Konak",
 
-  // Google Form that collects "Dolazim" RSVPs. nameField is the form's entry ID for the name question
-  // (get it via the form's ⋮ menu → "Get pre-filled link": the link contains entry.NNNNNNNNN=...)
+  // Google Form that collects "Dolazim" RSVPs. Entry IDs come from the form's ⋮ menu → "Get pre-filled link".
+  // attendingValue must match the multiple-choice option text exactly (including the double space).
   formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfWLk4R4nvYp5ryEY9n-BIbou55LYQ9gTzPKRMjHzdEvGI2Zw/formResponse",
-  nameField: "entry.0000000000",
+  nameField: "entry.559352220",
+  attendingField: "entry.877086558",
+  attendingValue: "Yes,  I'll be there",
 
-  // Prefilled WhatsApp message for "Nažalost, ne mogu"
+  // Prefilled WhatsApp/Viber messages
+  rsvpYes: "Ćao Nina! 🎉 Dolazim na tvoj 18. rođendan, jedva čekam!",
   rsvpNo: "Ćao Nina! Nažalost, ne mogu da dođem na proslavu 😔 Srećan ti 18. rođendan!",
 };
 
@@ -32,8 +35,9 @@ function setupLinks() {
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.mapQuery)}`;
 
   document.getElementById("rsvp-no").href = wa(CONFIG.rsvpNo);
-  document.getElementById("viber-link").href = `viber://chat?number=%2B${CONFIG.phone}`;
-  document.getElementById("whatsapp-link").href = `https://wa.me/${CONFIG.phone}`;
+  document.getElementById("viber-link").href =
+    `viber://chat?number=%2B${CONFIG.phone}&draft=${encodeURIComponent(CONFIG.rsvpYes)}`;
+  document.getElementById("whatsapp-link").href = wa(CONFIG.rsvpYes);
 
 }
 
@@ -83,7 +87,10 @@ function setupRsvp() {
       await fetch(CONFIG.formUrl, {
         method: "POST",
         mode: "no-cors",
-        body: new URLSearchParams({ [CONFIG.nameField]: name }),
+        body: new URLSearchParams({
+          [CONFIG.nameField]: name,
+          [CONFIG.attendingField]: CONFIG.attendingValue,
+        }),
       });
       try { localStorage.setItem(RSVP_KEY, name); } catch (e) { /* ignore */ }
       showThanks(name);
