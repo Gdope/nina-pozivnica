@@ -3,8 +3,8 @@
 // ============================================================
 const CONFIG = {
   // Start and end of the party, with the Belgrade UTC offset (+01:00 in winter, +02:00 in summer)
-  start: "2026-12-12T20:00:00+01:00",
-  end: "2026-12-13T03:00:00+01:00",
+  start: "2026-12-13T18:00:00+01:00",
+  end: "2026-12-14T02:00:00+01:00",
 
   // Phone number for RSVPs, international format without "+" or spaces (e.g. 381641234567)
   phone: "38166141133",

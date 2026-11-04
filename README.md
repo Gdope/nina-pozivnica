@@ -14,7 +14,7 @@ A single mobile-first page (Serbian, Latin script) for Nina's 18th birthday. Pla
 
 ## Before sending the link: replace the placeholders
 
-The date and time are still placeholders. Update them in these places:
+If the date or time changes, update them in these places:
 
 1. **`index.html`**, in the "Gde i kada" section: the visible date and time (and the RSVP deadline, "do 30. novembra", if it changes).
 2. **`index.html`** `<head>`: the `description` meta tag (it repeats the date and time).
